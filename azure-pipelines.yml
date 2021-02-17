@@ -42,4 +42,4 @@ steps:
 
 - task: InlinePowershell@1
   inputs:
-    Script: 'Write-Error ''Hello world'''
+    Script: 'Write-Host ''Hello world'''
