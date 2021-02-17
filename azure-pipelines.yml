@@ -20,4 +20,4 @@ steps:
 
 - task: InlinePowershell@1
   inputs:
-    Script: 'Write-Output ''Hello world'''
+    Script: 'Write-Error ''Hello world'''
