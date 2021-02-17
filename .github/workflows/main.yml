@@ -23,4 +23,4 @@ jobs:
           with:
             azure-devops-project-url: https://dev.azure.com/EPMC-STC/Shared%20Tools%20And%20Libraries
             azure-pipeline-name: 'CakeBuild'
-            azure-devops-token: ${{ secrets.ADO_TOKEN }}
+            azure-devops-token: ${{ secrets.ADO_SECRET }}
