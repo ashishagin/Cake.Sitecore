@@ -13,18 +13,14 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: Azure/pipelines@v1
-      with:
-        azure-devops-project-url: 'https://dev.azure.com/EPMC-STC'
-        azure-pipeline-name: 'CakeBuild' # name of the Azure pipeline to be triggered
-        azure-devops-token: '123123123213'
+    build:
+        name: Call Azure Pipeline
+        runs-on: ubuntu-latest
+        steps:
+        - name: Azure Pipelines Action
+          uses: Azure/pipelines@v1
+          with:
+            azure-devops-project-url: https://dev.azure.com/EPMC-STC/Shared%20Tools%20And%20Libraries
+            azure-pipeline-name: 'CakeBuild'
+            azure-devops-token: ${{ secrets.ADO_TOKEN }}
