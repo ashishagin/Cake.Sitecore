@@ -16,7 +16,11 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  displayName: 'Run a multi-line script' 
+
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: 4.4.1
 
 - task: InlinePowershell@1
   inputs:
