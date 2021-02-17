@@ -27,4 +27,4 @@ jobs:
         with:
           azure-devops-project-url: 'https://dev.azure.com/EPMC-STC'
           azure-pipeline-name: 'CakeBuild' # name of the Azure pipeline to be triggered
-          azure-devops-token: '${{ secrets.ADO_SECRET }}'
+          azure-devops-token: '123123123213'
