@@ -22,9 +22,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: Azure/pipelines@v1
-        with:
-          azure-devops-project-url: 'https://dev.azure.com/EPMC-STC'
-          azure-pipeline-name: 'CakeBuild' # name of the Azure pipeline to be triggered
-          azure-devops-token: '123123123213'
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: Azure/pipelines@v1
+      with:
+        azure-devops-project-url: 'https://dev.azure.com/EPMC-STC'
+        azure-pipeline-name: 'CakeBuild' # name of the Azure pipeline to be triggered
+        azure-devops-token: '123123123213'
