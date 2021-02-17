@@ -21,6 +21,24 @@ steps:
 - task: NuGetToolInstaller@1
   inputs:
     versionSpec: 4.4.1
+  
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+
+- task: GitVersion@5
+  inputs:
+    runtime: 'core'
+    configFilePath: 'gitversion.yml'
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'GitVersion.NuGetVersion'
 
 - task: InlinePowershell@1
   inputs:
